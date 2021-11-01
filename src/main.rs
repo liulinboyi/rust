@@ -7,6 +7,8 @@
 pub mod average;
 pub mod int_overflow;
 pub mod mutuple;
+pub mod array;
+pub mod my_slice;
 
 const COUNT: i32 = 10;
 
@@ -19,6 +21,8 @@ fn main() {
     test_avg();
     test_int_over_flow();
     test_mutuple();
+    test_array();
+    test_slice();
 }
 
 fn test_main() {
@@ -58,4 +62,12 @@ fn test_int_over_flow() {
 
 fn test_mutuple() {
     mutuple::mutuple()
+}
+
+fn test_array() {
+    array::array();
+}
+
+fn test_slice() {
+    my_slice::slice();
 }
