@@ -10,6 +10,7 @@ pub mod mutuple;
 pub mod array;
 pub mod my_slice;
 pub mod my_struct;
+pub mod my_enum;
 
 const COUNT: i32 = 10;
 
@@ -25,6 +26,7 @@ fn main() {
     test_array();
     test_slice();
     test_my_struct();
+    test_my_enum();
 }
 
 fn test_main() {
@@ -76,4 +78,8 @@ fn test_slice() {
 
 fn test_my_struct() {
     my_struct::my_struct();
+}
+
+fn test_my_enum() {
+    my_enum::my_enum();
 }
