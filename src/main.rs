@@ -12,6 +12,7 @@ pub mod my_slice;
 pub mod my_struct;
 pub mod my_enum;
 pub mod my_type_conversion;
+pub mod expressions;
 
 const COUNT: i32 = 10;
 
@@ -29,6 +30,7 @@ fn main() {
     test_my_struct();
     test_my_enum();
     test_my_type_conversion();
+    test_my_expressions();
 }
 
 fn test_main() {
@@ -88,4 +90,8 @@ fn test_my_enum() {
 
 fn test_my_type_conversion() {
     my_type_conversion::my_type_conversion();
+}
+
+fn test_my_expressions() {
+    expressions::my_expressions();
 }
