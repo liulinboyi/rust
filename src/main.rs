@@ -6,6 +6,7 @@
 
 pub mod average;
 pub mod int_overflow;
+pub mod mutuple;
 
 const COUNT: i32 = 10;
 
@@ -17,6 +18,7 @@ fn main() {
     test_main();
     test_avg();
     test_int_over_flow();
+    test_mutuple();
 }
 
 fn test_main() {
@@ -52,4 +54,8 @@ fn test_avg() {
 
 fn test_int_over_flow() {
     int_overflow::int_over_flow()
+}
+
+fn test_mutuple() {
+    mutuple::mutuple()
 }
