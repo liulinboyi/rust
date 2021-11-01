@@ -4,6 +4,9 @@
 // 隐藏 可以声明和前面变量同名的新变量
 //
 
+pub mod average;
+pub mod int_overflow;
+
 const COUNT: i32 = 10;
 
 fn get_number() -> i32 {
@@ -11,6 +14,12 @@ fn get_number() -> i32 {
 }
 
 fn main() {
+    test_main();
+    test_avg();
+    test_int_over_flow();
+}
+
+fn test_main() {
     // let x = 6; // 默认不可变
     let mut x = 10; // 添加mut可变
                     // 宏是一个支持可变参数的函数
@@ -30,5 +39,17 @@ fn main() {
     // 推荐这种写法
     // 隐藏这种操作，在大多数，不可变变量的语言中很常见
     // 新变量和前一个变量名称相同时，新变量会隐藏掉前面的变量
-    print!("The value of a is {}", a);
+    println!("The value of a is {}", a);
+}
+
+fn test_avg() {
+    assert_eq!(average::avg(4294967295, 4294967295), 4294967295);
+    assert_eq!(average::avg(0, 0), 0);
+    assert_eq!(average::avg(10, 20), 15);
+    assert_eq!(average::avg(4294967295, 1), 2147483648);
+    println!("passed");
+}
+
+fn test_int_over_flow() {
+    int_overflow::int_over_flow()
 }
