@@ -4,16 +4,17 @@
 // 隐藏 可以声明和前面变量同名的新变量
 //
 
-pub mod average;
-pub mod int_overflow;
-pub mod mutuple;
 pub mod array;
-pub mod my_slice;
-pub mod my_struct;
-pub mod my_enum;
-pub mod my_type_conversion;
+pub mod average;
 pub mod expressions;
 pub mod function;
+pub mod guess_number;
+pub mod int_overflow;
+pub mod mutuple;
+pub mod my_enum;
+pub mod my_slice;
+pub mod my_struct;
+pub mod my_type_conversion;
 
 const COUNT: i32 = 10;
 
@@ -33,6 +34,8 @@ fn main() {
     test_my_type_conversion();
     test_my_expressions();
     test_function();
+    // 猜数字游戏
+    test_guess_number();
 }
 
 fn test_main() {
@@ -100,4 +103,9 @@ fn test_my_expressions() {
 
 fn test_function() {
     function::function();
+}
+
+// 猜数字游戏
+fn test_guess_number() {
+    guess_number::guess_number();
 }
