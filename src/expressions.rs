@@ -117,6 +117,7 @@ pub fn my_expressions() {
 
     println!("-------------match------------------");
 
+    #[derive(Debug)]
     enum Alphabet {
         A,
         B,
@@ -137,6 +138,48 @@ pub fn my_expressions() {
         30 => {
             println!("It is ok!");
         }
-        _=> {}
+        _ => {}
+    }
+
+    println!("-------------if let 语法糖------------------");
+    // if let 语法糖主要是简化了match操作
+    // 仅仅想匹配某一个操作时，忽略其他操作时，
+    // 黑可以匹配到枚举中参数
+
+    enum Alphabet1 {
+        A(char),
+        B,
+    }
+
+    let letter = Alphabet::A;
+    match letter {
+        Alphabet::A => {
+            println!("send msg!");
+        }
+        _ => {}
+    }
+
+    if let Alphabet::A = letter {
+        println!("if let send msg!");
+    }
+
+    let letter = Alphabet1::A('A');
+
+    if let Alphabet1::A(x) = letter {
+        println!("{}", x);
+    }
+
+    println!("-------------while let 语法糖------------------");
+
+    let lettera = Alphabet::A;
+    let mut count = 0;
+
+    while let Alphabet::A = lettera {
+        // 当lettera == Alphabet::A 时，循环会一直执行下去
+        println!("{:?}", lettera);
+        count += 1;
+        if count > 10 {
+            break;
+        }
     }
 }
