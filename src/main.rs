@@ -8,18 +8,19 @@ pub mod array;
 pub mod average;
 pub mod expressions;
 pub mod function;
+pub mod generics;
 pub mod guess_number;
 pub mod int_overflow;
+pub mod lifecycle;
+pub mod module;
 pub mod mutuple;
 pub mod my_enum;
 pub mod my_slice;
 pub mod my_struct;
 pub mod my_type_conversion;
-pub mod module;
-pub mod use_key_words;
 pub mod super_self;
-pub mod generics;
 pub mod traits;
+pub mod use_key_words;
 
 const COUNT: i32 = 10;
 
@@ -47,6 +48,7 @@ fn main() {
     test_super_self();
     test_generics();
     test_traits();
+    test_lifecycle();
 }
 
 fn test_main() {
@@ -139,4 +141,8 @@ fn test_generics() {
 
 fn test_traits() {
     traits::traits();
+}
+
+fn test_lifecycle() {
+    lifecycle::lifecycle();
 }
