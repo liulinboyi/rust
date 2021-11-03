@@ -6,6 +6,7 @@
 
 pub mod array;
 pub mod average;
+pub mod error;
 pub mod expressions;
 pub mod function;
 pub mod generics;
@@ -28,7 +29,8 @@ fn get_number() -> i32 {
     42
 }
 
-fn main() {
+// main 函数可以后返回值
+fn main() -> Result<(), error::Error> {
     test_main();
     test_avg();
     test_int_over_flow();
@@ -49,6 +51,8 @@ fn main() {
     test_generics();
     test_traits();
     test_lifecycle();
+    test_error();
+    Ok(())
 }
 
 fn test_main() {
@@ -145,4 +149,8 @@ fn test_traits() {
 
 fn test_lifecycle() {
     lifecycle::lifecycle();
+}
+
+fn test_error() {
+    error::error();
 }
