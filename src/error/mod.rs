@@ -113,9 +113,8 @@ pub fn error() {
     fn read_file1() -> Result<&'static str, Error> {
         let data = std::fs::read("src/main.rs")?;
         let content: &str = std::str::from_utf8(&data)?;
-        println!("read_file1_inner: {:?}", content);
+        // println!("read_file1_inner: {:?}", content); // 暂时注释
         Ok("ok")
-        // Ok(content)
     }
 
     fn file() -> String {
@@ -133,7 +132,7 @@ pub fn error() {
     }
 
     let files = file();
-    println!("files: {}", files);
+    // println!("files: {}", files); // 暂时注释
 
     fn file_error() -> Result<String, Error> {
         let data = std::fs::read("src/a.rs")?;
@@ -146,7 +145,7 @@ pub fn error() {
 
     match read_file1() {
         Ok(data) => {
-            println!("{:?}", data);
+            // println!("{:?}", data); // 暂时注释
         }
 
         Err(e) => {
