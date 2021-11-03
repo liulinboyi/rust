@@ -18,6 +18,8 @@ pub mod my_type_conversion;
 pub mod module;
 pub mod use_key_words;
 pub mod super_self;
+pub mod generics;
+pub mod traits;
 
 const COUNT: i32 = 10;
 
@@ -43,6 +45,8 @@ fn main() {
     // 读取文件
     // test_use_key_words();
     test_super_self();
+    test_generics();
+    test_traits();
 }
 
 fn test_main() {
@@ -127,4 +131,12 @@ fn test_use_key_words() {
 
 fn test_super_self() {
     super_self::super_self();
+}
+
+fn test_generics() {
+    generics::generics();
+}
+
+fn test_traits() {
+    traits::traits();
 }
