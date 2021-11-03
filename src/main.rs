@@ -19,6 +19,7 @@ pub mod my_enum;
 pub mod my_slice;
 pub mod my_struct;
 pub mod my_type_conversion;
+pub mod pointer_box;
 pub mod super_self;
 pub mod traits;
 pub mod use_key_words;
@@ -52,6 +53,7 @@ fn main() -> Result<(), error::Error> {
     test_traits();
     test_lifecycle();
     test_error();
+    test_pointer_box();
     Ok(())
 }
 
@@ -153,4 +155,8 @@ fn test_lifecycle() {
 
 fn test_error() {
     error::error();
+}
+
+fn test_pointer_box() {
+    pointer_box::pointer_box();
 }
