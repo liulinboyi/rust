@@ -11,6 +11,7 @@ pub mod expressions;
 pub mod function;
 pub mod generics;
 pub mod guess_number;
+pub mod hash_map;
 pub mod int_overflow;
 pub mod lifecycle;
 pub mod module;
@@ -20,9 +21,12 @@ pub mod my_slice;
 pub mod my_struct;
 pub mod my_type_conversion;
 pub mod pointer_box;
+pub mod str_type;
 pub mod super_self;
+pub mod tiem;
 pub mod traits;
 pub mod use_key_words;
+pub mod vector;
 
 const COUNT: i32 = 10;
 
@@ -54,6 +58,10 @@ fn main() -> Result<(), error::Error> {
     test_lifecycle();
     test_error();
     test_pointer_box();
+    test_vector();
+    test_hash_map();
+    test_str_type();
+    test_tiem();
     Ok(())
 }
 
@@ -159,4 +167,20 @@ fn test_error() {
 
 fn test_pointer_box() {
     pointer_box::pointer_box();
+}
+
+fn test_vector() {
+    vector::vector();
+}
+
+fn test_hash_map() {
+    hash_map::hash_map();
+}
+
+fn test_str_type() {
+    str_type::str_type();
+}
+
+fn test_tiem() {
+    tiem::tiem();
 }
