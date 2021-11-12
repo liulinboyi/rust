@@ -30,7 +30,18 @@ pub fn tiem() {
     };
     println!("{:?}", res);
     let time_stamp = now.duration_since(SystemTime::UNIX_EPOCH).unwrap();
-    println!("{:?}", time_stamp);
+    println!("time_stamp: {:?}", time_stamp);
+
+    let start = SystemTime::now();
+    let since_the_epoch = start
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .expect("Time went backwards");
+    println!("since_the_epoch: {:?}", since_the_epoch);
+
+    let in_ms =
+        since_the_epoch.as_millis();
+
+    println!("in_ms: {:?}", in_ms);
 
     // sleep(Duration::from_secs(2));
     // ela 航运常见 一艘船从港口出发到上岸为止

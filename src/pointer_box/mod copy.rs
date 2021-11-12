@@ -166,9 +166,9 @@ pub fn pointer_box() -> Result<(), Box<dyn std::error::Error>> {
     let temp = res.borrow_mut();
     temp.children.borrow_mut().push(rc_n2.clone());
 
-    println!("stack: {:?}", stack);
+    println!("stack: {:?}", stack.to_owned());
     println!("n1: {:?}", n1);
-    println!("n1: {:?}", temp);
+    println!("n1: {:?}", res);
 
     Ok(())
 }

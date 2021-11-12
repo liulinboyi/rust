@@ -7,7 +7,7 @@ struct Student {
     name: String,
 }
 
-pub fn str_type() {
+pub fn str_type() -> Result<(), Box<dyn std::error::Error>> {
     println!("-------------str_type------------------");
     // 放在函数的参数里面使用&str
     // 如果定义一个结构体，结构图里面的成员，是字符串类型，使用String
@@ -43,4 +43,13 @@ pub fn str_type() {
         name: String::from("张三"),
     };
     println!("{:?}", zs); // Rust自动实现了Debug，可以通过{:?}来打印
+
+    let str = String::from("小明");
+    for item in str.chars() {
+        println!("{}", item);
+    }
+
+    let ss = "小明";
+    println!("{:?}",ss.get(0..1));
+    Ok(())
 }
